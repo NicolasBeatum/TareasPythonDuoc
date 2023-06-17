@@ -11,10 +11,8 @@ def mostrar_Asientos(asientos):
     print(asientos)
 
 def comprar_Asientos(rut_cliente,nombre_cliente,num,asientos,rut,nombre,asiento_cliente):
-    ocupao = True
-    if num > 100:
-            print("Asiento no existe")        
-    elif num != "" and nombre_cliente != "" and rut_cliente != "":
+    ocupao = True     
+    if num != "" and nombre_cliente != "" and rut_cliente != "":
         for f in range(10):
             for c in range(10):
                 if num == asientos[f,c]:
@@ -39,11 +37,14 @@ def lista_usuario(rut, nombre, asiento_cliente):
     print(asiento_cliente)
 
 def buscar(rut_ing,lista_rut,lista_nombre,lista_cliente):
-    pos = lista_rut.index(rut_ing)
-    print("---Datos del Cliente---")
-    print(f"Nombre del Cliente: {lista_nombre[pos]}")
-    print(f"Rut del Cliente: {lista_rut[pos]}")
-    print(f"Asiento del Cliente: {lista_cliente[pos]}")
+    try:
+        pos = lista_rut.index(rut_ing)
+        print("---Datos del Cliente---")
+        print(f"Nombre del Cliente: {lista_nombre[pos]}")
+        print(f"Rut del Cliente: {lista_rut[pos]}")
+        print(f"Asiento del Cliente: {lista_cliente[pos]}")
+    except ValueError:
+        print("El Rut no se encuentra en la base de datos.")
         
         
 def mostrar_ganancias(asiento_cliente):

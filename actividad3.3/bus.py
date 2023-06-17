@@ -1,3 +1,4 @@
+#NO TIENE FUNCIONES
 import numpy as np
 from funcionesbus import * 
 valor = np.arange(1, 101, dtype=object)
